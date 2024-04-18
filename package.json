@@ -1,0 +1,21 @@
+{
+  "name": "workshops_in_creative_coding2_project",
+  "version": "1.0.0",
+  "description": "A web sraping project for YouTube using jssoup.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "vite --port 5900",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Viola Liang",
+  "license": "ISC",
+  "dependencies": {
+    "jssoup": "0.0.15"
+  },
+  "devDependencies": {
+    "vite": "^5.0.11"
+  },
+  "keywords": []
+}
