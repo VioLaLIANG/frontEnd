@@ -4,7 +4,7 @@ const boldMode = false;
 const debugText = false;
 const fullSize = true;
 
-const charStr = '012345789Z:・."=*+-<>¦｜_/\\';
+// const charStr = '012345789Z:・."=*+-<>¦｜_/\\';
 
 let symbols = [];
 
@@ -37,39 +37,39 @@ async function loadDescriptionWords() {
 
 loadDescriptionWords();
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevents the form from submitting traditionally
+// document.addEventListener('DOMContentLoaded', function() {
+//     const form = document.querySelector('form');
+//     form.addEventListener('submit', function(event) {
+//         event.preventDefault(); // Prevents the form from submitting traditionally
 
-        // Fetch the input values (as before)
-        url1 = document.getElementById('input1').value;
-        url2 = document.getElementById('input2').value;
-        url3 = document.getElementById('input3').value;
-        console.log(url1, url2, url3);
+//         // Fetch the input values (as before)
+//         url1 = document.getElementById('input1').value;
+//         url2 = document.getElementById('input2').value;
+//         url3 = document.getElementById('input3').value;
+//         console.log(url1, url2, url3);
 
-        const response = fetch('http://localhost:7400/api/link', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                link1: url1,
-                link2: url2,
-                link3: url3
-            })
-        })
-        .then((response) => console.log(response))
-        .catch((err) => console.log(err));
+//         const response = fetch('http://localhost:7400/api/link', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({
+//                 link1: url1,
+//                 link2: url2,
+//                 link3: url3
+//             })
+//         })
+//         .then((response) => console.log(response))
+//         .catch((err) => console.log(err));
 
-        // Update the submission message
-        const messageElement = document.getElementById('submissionMessage');
-        messageElement.innerText = 'Submission successful!';
+//         // Update the submission message
+//         const messageElement = document.getElementById('submissionMessage');
+//         messageElement.innerText = 'Submission successful!';
 
-        // Optional: Clear the form fields after submission
-        form.reset();
-    });
-});
+//         // Optional: Clear the form fields after submission
+//         form.reset();
+//     });
+// });
 
 function setup() {
   let canvas = createCanvas(window.innerWidth, window.innerHeight);
@@ -139,6 +139,8 @@ for (let y = 0; y < charHeight; y++) {
         // Use the current symbol and increment the index
         chars[i] = symbols[symbolIndex];
         symbolIndex = (symbolIndex + 1) % symbols.length; // Loop back to start if end is reached
+        //console.log("chars[i]", chars[i]);
+        //console.log("symbolIndex", symbolIndex);
 
         let ls = lifespan[i];
         if (ls > 10) {
